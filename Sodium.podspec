@@ -5,7 +5,8 @@ s.version = '0.3'
 s.license = { :type => "ISC", :file => 'LICENSE' }
 s.summary = 'Swift-Sodium provides a safe and easy to use interface to perform common cryptographic operations on iOS and OSX.'
 s.authors = { 'Frank Denis' => '' }
-s.source = { :git => 'https://github.com/dialogs/swift-sodium.git'}
+s.homepage = 'https://github.com/dialogs/swift-sodium'
+s.source = { :git => 'https://github.com/dialogs/swift-sodium.git', :tag => '0.3' }
 
 s.ios.deployment_target = '8.0'
 s.osx.deployment_target = '10.10'
