@@ -1,6 +1,13 @@
 # Sodium [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Make a donation to support this project](https://img.shields.io/badge/donate-PayPal-green.svg?style=flat)](https://www.libsodium.org/donate)
 
+
+Checksums
+============
+libsodium-ios.a SHA: 12909269d76a37cac9a357ff202e6f7146f237e8 
+
+libsodium-ios.a MD5: 4d926477c46ad699c3eed241c8ac2186
+
 Swift-Sodium
 ============
 
