@@ -1,12 +1,17 @@
 Pod::Spec.new do |s|
+<<<<<<< HEAD
 	
 s.name = 'DLGSodium'
 s.version = '0.3'
+=======
+s.name = 'Sodium'
+s.version = '0.5'
+>>>>>>> 197b16a2d43a8eb2219660c724e3574a905db162
 s.license = { :type => "ISC", :file => 'LICENSE' }
 s.summary = 'Swift-Sodium provides a safe and easy to use interface to perform common cryptographic operations on iOS and OSX.'
 s.authors = { 'Frank Denis' => '' }
 s.homepage = 'https://github.com/dialogs/swift-sodium'
-s.source = { :git => 'https://github.com/dialogs/swift-sodium.git', :tag => '0.3' }
+s.source = { :git => 'https://github.com/dialogs/swift-sodium.git', :tag => '0.5' }
 
 s.ios.deployment_target = '8.0'
 s.osx.deployment_target = '10.10'
