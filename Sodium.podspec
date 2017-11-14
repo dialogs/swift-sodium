@@ -19,7 +19,7 @@ s.osx.vendored_library    = 'Sodium/libsodium/libsodium-osx.a'
 s.source_files = 'Sodium/**/*.{swift,h}'
 s.private_header_files = 'Sodium/libsodium/*.h'
 
-s.preserve_paths = 'Sodium/libsodium/module.modulemap'
+#s.preserve_paths = 'Sodium/libsodium/module.modulemap'
 s.pod_target_xcconfig = {
 	'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/Sodium/libsodium',
 }
