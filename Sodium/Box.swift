@@ -80,8 +80,8 @@ public class Box {
      */
     public func nonce() -> Nonce {
         var nonce = Data(count: NonceBytes)
-        nonce.withUnsafeMutableBytes { noncePtr in
-            randombytes_buf(noncePtr, nonce.count)
+        nonce.withUnsafeMutableBytes { [count = nonce.count] noncePtr in
+            randombytes_buf(noncePtr, count)
         }
         return nonce
     }

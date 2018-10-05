@@ -65,9 +65,9 @@ public class Utils {
     public func bin2hex(_ bin: Data) -> String? {
         var hexData = Data(count: bin.count * 2 + 1)
 
-        return hexData.withUnsafeMutableBytes { (hexPtr: UnsafeMutablePointer<Int8>) -> String? in
+        return hexData.withUnsafeMutableBytes {  [count = hexData.count] (hexPtr: UnsafeMutablePointer<Int8>) -> String? in
             bin.withUnsafeBytes { (binPtr: UnsafePointer<UInt8>) -> String? in
-                if sodium_bin2hex(hexPtr, hexData.count, binPtr, bin.count) == nil {
+                if sodium_bin2hex(hexPtr, count, binPtr, bin.count) == nil {
                     return nil
                 }
                 return String.init(validatingUTF8: hexPtr)
@@ -126,9 +126,9 @@ public class Utils {
     public func bin2base64(_ bin: Data, variant: Base64Variant = .URLSAFE) -> String? {
         var b64Data = Data(count: sodium_base64_encoded_len(bin.count, variant.rawValue))
 
-        return b64Data.withUnsafeMutableBytes { (b64Ptr: UnsafeMutablePointer<Int8>) -> String? in
+        return b64Data.withUnsafeMutableBytes { [count = b64Data.count] (b64Ptr: UnsafeMutablePointer<Int8>) -> String? in
             bin.withUnsafeBytes { (binPtr: UnsafePointer<UInt8>) -> String? in
-                if sodium_bin2base64(b64Ptr, b64Data.count, binPtr, bin.count, variant.rawValue) == nil {
+                if sodium_bin2base64(b64Ptr, count, binPtr, bin.count, variant.rawValue) == nil {
                     return nil
                 }
                 return String.init(validatingUTF8: b64Ptr)
@@ -199,8 +199,8 @@ public class Utils {
      */
     public func unpad(data: inout Data, blockSize: Int) -> ()? {
         var unpaddedLen: size_t = 0
-        let result = data.withUnsafeMutableBytes { dataPtr in
-            sodium_unpad(&unpaddedLen, dataPtr, data.count, blockSize)
+        let result = data.withUnsafeMutableBytes { [count = data.count] dataPtr in
+            sodium_unpad(&unpaddedLen, dataPtr, count, blockSize)
         }
         if result != 0 {
             return nil

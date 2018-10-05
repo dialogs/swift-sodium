@@ -16,8 +16,8 @@ public class RandomBytes {
             return nil
         }
         var output = Data(count: length)
-        output.withUnsafeMutableBytes { outputPtr in
-            randombytes_buf(outputPtr, output.count)
+        output.withUnsafeMutableBytes { [count = output.count] outputPtr in
+            randombytes_buf(outputPtr, count)
         }
         return output
     }
@@ -53,9 +53,9 @@ public class RandomBytes {
             return nil
         }
         var output = Data(count: length)
-        output.withUnsafeMutableBytes { outputPtr in
+        output.withUnsafeMutableBytes { [count = output.count] outputPtr in
             seed.withUnsafeBytes { seedPtr in
-                randombytes_buf_deterministic(outputPtr, output.count, seedPtr)
+                randombytes_buf_deterministic(outputPtr, count, seedPtr)
             }
         }
         return output
