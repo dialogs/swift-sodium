@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-s.name = 'DLGSodium'
+s.name = 'Sodium'
 s.version = '0.8.1'
 s.swift_version = '5.0'
 s.license = { :type => "ISC", :file => 'LICENSE' }
